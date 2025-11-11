@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Virtual environments
+.venv/
+env/
+venv/
+*.conda
+*.log
+
+# Data / cache
+data/*.csv
+*.sqlite3
+*.db
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# DeepFace models cache
+~/.deepface/

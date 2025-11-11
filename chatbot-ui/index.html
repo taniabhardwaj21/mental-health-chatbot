@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful - Your Mental Health Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <video id="video" width="300" height="200" autoplay></video>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="bot-avatar">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="url(#gradient)" opacity="0.9"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="35" cy="40" r="5" fill="#fff"/>
+                        <circle cx="65" cy="40" r="5" fill="#fff"/>
+                        <path d="M 40 60 Q 50 70 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="header-text">
+                    <h1>Mindful</h1>
+                    <p class="status">Here to listen</p>
+                </div>
+            </div>
+            <button class="header-btn" id="settingsBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Messages Container -->
+        <div class="messages-container" id="messagesContainer">
+            <div class="message bot-message initial-message">
+                <div class="message-avatar">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="url(#gradientBot)" opacity="0.9"/>
+                        <defs>
+                            <linearGradient id="gradientBot" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="35" cy="40" r="4" fill="#fff"/>
+                        <circle cx="65" cy="40" r="4" fill="#fff"/>
+                        <path d="M 40 60 Q 50 68 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="message-content">
+                    <p>Hello! I'm Mindful, your mental health companion. I'm here to listen and support you through your thoughts and feelings. How are you doing today?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <form id="messageForm" class="message-form">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    class="message-input" 
+                    placeholder="Share what's on your mind..."
+                    autocomplete="off"
+                >
+                <button type="submit" class="send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+            <div class="disclaimer">
+                <p>Mindful supports your wellbeing but doesn't replace professional help</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <template id="typingIndicator">
+        <div class="message bot-message typing-message">
+            <div class="message-avatar">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="url(#gradientTyping)" opacity="0.9"/>
+                    <defs>
+                        <linearGradient id="gradientTyping" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="35" cy="40" r="4" fill="#fff"/>
+                    <circle cx="65" cy="40" r="4" fill="#fff"/>
+                    <path d="M 40 60 Q 50 68 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </template>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
