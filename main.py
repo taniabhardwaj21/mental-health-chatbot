@@ -60,7 +60,15 @@ async def emotion(request: Request):
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
     result = DeepFace.analyze(img, actions=['emotion'], enforce_detection=False)
-    current_emotion = result[0]['dominant_emotion']
+    
+    # Get emotion scores
+    emotions = result[0]['emotion']
+    
+    # Dampen neutral score to make system more sensitive to other emotions
+    if 'neutral' in emotions:
+        emotions['neutral'] *= 0.3
+        
+    current_emotion = max(emotions, key=emotions.get)
     return {"emotion": current_emotion}
 
 # @app.post("/doc-chat")

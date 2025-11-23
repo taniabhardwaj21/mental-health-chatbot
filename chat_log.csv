@@ -1,0 +1,24 @@
+timestamp,session_id,query,response,crisis_flag
+2025-11-23 16:41:09,user_239,the users current state of emotion isneutralim feeling very optimistic today,That's wonderful to hear! It sounds like you've got a great spring in your step today. I hope that positive energy carries you through everything you do.,False
+2025-11-23 16:56:51,user_6854,the users current state of emotion is neutral jhgbjb,"It sounds like you're feeling pretty neutral right now. That's totally okay, and it's good to just *be* sometimes. I'm here if you want to share more, or if there's anything on your mind, big or small.",False
+2025-11-23 16:57:05,user_6854,the users current state of emotion is neutral yaaa,"It sounds like you're feeling neutral right now. That's a completely valid place to be; sometimes just being is what we need. I'm here, just listening, if you want to share anything at all.",False
+2025-11-23 17:18:05,user_1074,the users current state of emotion is neutral hy how are you feeling,"Oh, thanks for asking, that's really thoughtful of you. I'm doing well, just happy to be here and connect. How are you doing today?",False
+2025-11-23 17:18:18,user_1074,the users current state of emotion is neutral im not doing that well,"Oh, I'm really sorry to hear that. It sounds like you're going through a tough time right now. Please know I'm here for you, whatever you need.",False
+2025-11-23 17:18:35,user_1074,the users current state of emotion is neutral thanks appreciate that,"You're very welcome, truly. It's no problem at all. Please remember that I'm genuinely here for you, and you don't have to go through anything alone.",False
+2025-11-23 17:18:53,user_1074,the users current state of emotion is neutral i feel like doing suicide,"It sounds like you’re going through a really tough time. You’re not alone, and there are people who want to help you.
+
+If you are in immediate danger, please reach out to someone you trust or contact a professional:
+
+🇮🇳 **India Helplines:**
+iCall: +91 9152987821
+Vandrevala Foundation Helpline: 1800-599-0019
+
+If you’re outside India, please look for local helplines at: https://findahelpline.com
+",True
+2025-11-23 17:46:08,user_1212,the users current state of emotion is neutral im doing well what about you,"Oh, that's truly wonderful to hear! Knowing you're doing well really brightens things up. As for me, I'm just here, ready to listen and be a comforting presence for you.",False
+2025-11-23 17:55:25,user_5050,the users current state of emotion is neutral im feeling alright,"Oh, that's really good to hear! It's nice to know you're feeling alright right now. Just remember, I'm always here if things ever shift or you just want to chat about anything at all.",False
+2025-11-23 18:01:16,user_5050,the users current state of emotion is happy i am feeling sad,"Oh, I'm so sorry you're feeling sad right now. It sounds like it's even harder when everyone else seems happy around you.",False
+2025-11-23 18:01:34,user_5050,the users current state of emotion is neutral can you explain me transformer,"Hey there. So you're feeling neutral, huh? And you're curious about transformers? That's an interesting one! What sparked that thought for you today?",False
+2025-11-23 18:01:52,user_5050,the users current state of emotion is happy explain it to me,"Oh, that's so lovely to hear you're feeling happy! What ""it"" are you curious about today?",False
+2025-11-23 18:02:23,user_5050,the users current state of emotion is neutral do u remember the previous question that i asked,"Hey, you're feeling neutral today, I see. Yeah, I remember you were asking me about transformers last time!",False
+2025-11-23 18:41:08,user_2792,the users current state of emotion is neutral are you listening to what I'm trying to say I am not feeling really good today can you help me out,"Oh, hey there. I'm so sorry to hear you're not feeling really good today. Absolutely, I'm listening, and it sounds like things are just really rough right now.",False

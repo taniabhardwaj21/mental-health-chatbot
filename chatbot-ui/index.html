@@ -1,29 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindful - Your Mental Health Companion</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <circle cx='50' cy='50' r='45' fill='%2300a6ff'/>
+    <circle cx='35' cy='40' r='8' fill='white'/>
+    <circle cx='65' cy='40' r='8' fill='white'/>
+    <path d='M30 60 Q50 80 70 60' stroke='white' stroke-width='6' fill='none'/>
+    </svg>">
 </head>
+
 <body>
-      <video id="video" width="300" height="200" autoplay></video>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="url(#navGradient)" opacity="0.9" />
+                    <defs>
+                        <linearGradient id="navGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="35" cy="40" r="5" fill="#fff" />
+                    <circle cx="65" cy="40" r="5" fill="#fff" />
+                    <path d="M 40 60 Q 50 70 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
+                </svg>
+                <span class="brand-text">Mindful</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Chat</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-widget" id="videoWidget">
+        <div class="video-container">
+            <video id="video" autoplay muted playsinline></video>
+            <div class="video-overlay">
+                <span class="recording-indicator"></span>
+                <button class="minimize-btn" id="minimizeBtn" title="Minimize camera">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <button class="expand-btn" id="expandBtn" title="Show camera">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+        </button>
+    </div>
     <div class="chat-container">
         <!-- Header -->
         <div class="chat-header">
             <div class="header-content">
                 <div class="bot-avatar">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="45" fill="url(#gradient)" opacity="0.9"/>
+                        <circle cx="50" cy="50" r="45" fill="url(#gradient)" opacity="0.9" />
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
                                 <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <circle cx="35" cy="40" r="5" fill="#fff"/>
-                        <circle cx="65" cy="40" r="5" fill="#fff"/>
-                        <path d="M 40 60 Q 50 70 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="35" cy="40" r="5" fill="#fff" />
+                        <circle cx="65" cy="40" r="5" fill="#fff" />
+                        <path d="M 40 60 Q 50 70 60 60" stroke="#fff" stroke-width="2" fill="none"
+                            stroke-linecap="round" />
                     </svg>
                 </div>
                 <div class="header-text">
@@ -45,20 +101,22 @@
             <div class="message bot-message initial-message">
                 <div class="message-avatar">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="45" fill="url(#gradientBot)" opacity="0.9"/>
+                        <circle cx="50" cy="50" r="45" fill="url(#gradientBot)" opacity="0.9" />
                         <defs>
                             <linearGradient id="gradientBot" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
                                 <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <circle cx="35" cy="40" r="4" fill="#fff"/>
-                        <circle cx="65" cy="40" r="4" fill="#fff"/>
-                        <path d="M 40 60 Q 50 68 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="35" cy="40" r="4" fill="#fff" />
+                        <circle cx="65" cy="40" r="4" fill="#fff" />
+                        <path d="M 40 60 Q 50 68 60 60" stroke="#fff" stroke-width="2" fill="none"
+                            stroke-linecap="round" />
                     </svg>
                 </div>
                 <div class="message-content">
-                    <p>Hello! I'm Mindful, your mental health companion. I'm here to listen and support you through your thoughts and feelings. How are you doing today?</p>
+                    <p>Hello! I'm Mindful, your mental health companion. I'm here to listen and support you through your
+                        thoughts and feelings. How are you doing today?</p>
                 </div>
             </div>
         </div>
@@ -66,13 +124,17 @@
         <!-- Input Area -->
         <div class="input-area">
             <form id="messageForm" class="message-form">
-                <input 
-                    type="text" 
-                    id="messageInput" 
-                    class="message-input" 
-                    placeholder="Share what's on your mind..."
-                    autocomplete="off"
-                >
+                <input type="text" id="messageInput" class="message-input" placeholder="Share what's on your mind..."
+                    autocomplete="off">
+                <button type="button" class="mic-btn" id="micBtn" title="Speak message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                </button>
                 <button type="submit" class="send-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -91,16 +153,16 @@
         <div class="message bot-message typing-message">
             <div class="message-avatar">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" fill="url(#gradientTyping)" opacity="0.9"/>
+                    <circle cx="50" cy="50" r="45" fill="url(#gradientTyping)" opacity="0.9" />
                     <defs>
                         <linearGradient id="gradientTyping" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
                         </linearGradient>
                     </defs>
-                    <circle cx="35" cy="40" r="4" fill="#fff"/>
-                    <circle cx="65" cy="40" r="4" fill="#fff"/>
-                    <path d="M 40 60 Q 50 68 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="35" cy="40" r="4" fill="#fff" />
+                    <circle cx="65" cy="40" r="4" fill="#fff" />
+                    <path d="M 40 60 Q 50 68 60 60" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
                 </svg>
             </div>
             <div class="typing-dots">
@@ -113,4 +175,5 @@
 
     <script src="chatbot.js"></script>
 </body>
+
 </html>
