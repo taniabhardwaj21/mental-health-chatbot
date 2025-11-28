@@ -155,8 +155,8 @@ By combining **Gemini LLM’s conversational intelligence** with **DeepFace emot
 
 ### 👩‍💻 **Author**
 
-**Sanyam Diwan**
+**Tania Bhardwaj**
 🧩 Built with 💙 using Python, FastAPI, LangChain, and DeepFace
-📫 sanyamdiwan0000@gmail.com
+📫 taniabhardwaj6086@gmail.com
 
 
