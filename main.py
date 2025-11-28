@@ -2,20 +2,21 @@ import os
 from fastapi import FastAPI,Request
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
-from deepface import DeepFace
-from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
-import base64, cv2, numpy as np, torch
+from emotion_model.inference import load_model, predict_from_bytes
+import base64
 from models import ChatRequest
 from chat_engine import get_response
 from crisis import contains_crisis_keywords, get_crisis_message, SAFETY_MESSAGE
 from logger import log_chat
-# from doc_engine import query_documents
 
 # Load environment variables
 load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI()
+
+# Load emotion model
+model, device = load_model()
 
 # Allow CORS for frontend access
 app.add_middleware(
@@ -56,22 +57,17 @@ async def emotion(request: Request):
     data = await request.json()
     frame_data = data['frame'].split(',')[1]
     img_bytes = base64.b64decode(frame_data)
-    nparr = np.frombuffer(img_bytes, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    result = DeepFace.analyze(img, actions=['emotion'], enforce_detection=False)
+    emotions = predict_from_bytes(model, device, img_bytes)
+
+    if 'sad' in emotions:
+        emotions['sad'] *= 0.5
     
-    # Get emotion scores
-    emotions = result[0]['emotion']
-    
-    # Dampen neutral score to make system more sensitive to other emotions
-    if 'neutral' in emotions:
-        emotions['neutral'] *= 0.3
-        
+    if 'happy' in emotions:
+        emotions['happy'] *= 1.2
+
+    for emo, val in emotions.items():
+        print(f"{emo:10} : {val:.4f}")
+
     current_emotion = max(emotions, key=emotions.get)
     return {"emotion": current_emotion}
-
-# @app.post("/doc-chat")
-# def chat_with_documents(request: ChatRequest):
-#     response = query_documents(request.query)
-#     return {"response": response}

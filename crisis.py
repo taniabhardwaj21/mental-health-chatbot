@@ -23,7 +23,6 @@ def contains_crisis_keywords(text: str) -> bool:
     Checks if the input text contains any crisis-related keywords.
     Returns True if a match is found.
     """
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>crisis function called ")
     text_lower = text.lower()
     return any(keyword in text_lower for keyword in CRISIS_KEYWORDS)
 

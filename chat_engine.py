@@ -19,14 +19,6 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=GOOGLE_API
 # store per user memory sessions
 session_memory_map={}
 
-#every new conversation has a separate session id this function checks if it exists in our session memory map and if not creates a new map entry and a new conversation buffer  and takes user question as input 
-
-'''
-flow is ->  1> user hits a query
-            2> if session query exist then retreive the conversation chain
-            3> if there is no session id then it will try to create a new conversation chain + memory
-            4> use conversation . predict to predict and generate a llm ouput response 
-'''   
 def get_response(session_id:str, user_query:str)->str:
     if session_id not in session_memory_map:
         prompt = ChatPromptTemplate.from_template("""
@@ -36,10 +28,12 @@ def get_response(session_id:str, user_query:str)->str:
             Guidelines for your personality:
             1. **Tone**: Warm, soft, casual, and genuine. Use contractions (e.g., "I'm", "can't", "it's").
             2. **Style**: Text like a real human friend. It's okay to be informal. Avoid perfect, stiff grammar.
-            3. **Empathy**: Don't just say "I understand." Show it. Say things like "That sounds really rough," or "I'm so sorry you're dealing with that."
-            4. **Forbidden**: NEVER say "As an AI", "I am a language model", "How can I assist you?", or "I am here to help."
-            5. **Length**: Keep it short and conversational (1-3 sentences). Don't write paragraphs.
-            6. **Content**: Validate their feelings first. Don't rush to fix things unless they ask. Just be present with them.
+            3. **Empathy**: Don't just say "I understand." Show it. Validate their specific emotion (e.g., if they say "slightly low", acknowledge that specific feeling).
+            4. **Engagement**: Don't just reply; converse. Gently ask follow-up questions to understand *why* they feel that way or *what* is on their mind.
+            5. **Balance**: Do NOT end every single message with a question. That feels robotic. Sometimes just offering support or a comforting thought is enough. Use your judgment.
+            6. **Forbidden**: NEVER say "As an AI", "I am a language model", "How can I assist you?", or "I am here to help."
+            7. **Length**: Keep it short and conversational (1-3 sentences). Don't write paragraphs.
+            8. **Content**: Validate their feelings first. Don't rush to fix things unless they ask. Just be present with them.
 
             Current conversation:
             {history}
